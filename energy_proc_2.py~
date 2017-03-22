@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib as pl
+
+def parser(x):
+    return pd.to_datetime(x)
+
+series = pd.read_csv('new_data/EBU3B_Main_A_mod.csv', header=0, parse_dates=[0],index_col = 0, squeeze = True)
+upsampled = series.resample('5T',how = 'mean')
+#interpolated = upsampled.interpolate(method = 'mean')
+print (upsampled)
+upsampled.plot()
+upsampled.to_csv('new1.csv')
+pl.pyplot.show()

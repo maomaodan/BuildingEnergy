@@ -1,0 +1,9 @@
+import pandas as pd
+import csv
+
+with open('new1.csv', 'rb') as f:
+    reader = csv.reader(f)
+    my_list = list(reader)
+
+print my_list
+
