@@ -58,10 +58,10 @@ model.add(Dense(2, init='normal'))
 model.compile(loss=NLL, optimizer=sgd)
 
 x_train = data[:len(data)/3 * 2]
-y_train = label[1:len(label)/3 * 2+1]
+y_train = label[7:len(label)/3 * 2+7]
 
-x_test = data[len(data)/3 * 2:-1]
-y_test = label[1+len(label)/3 * 2:]
+x_test = data[len(data)/3 * 2:-7]
+y_test = label[7+len(label)/3 * 2:]
 
 history = model.fit(x_train, y_train, nb_epoch=300, batch_size=256, verbose=1)
 y_pred = model.predict(x_test, verbose=0)
